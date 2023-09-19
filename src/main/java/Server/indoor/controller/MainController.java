@@ -28,4 +28,11 @@ public class MainController {
         return new Student("jang", 12);
     }
 
+    @GetMapping("/matrix")
+    public String mat() {
+        Stack st = new Stack();
+
+        return "1.0 0.0 0.0 0.0 2.0 0.0 0.0 0.0 3.0 0.0 0.0 0.0 4.0 0.0 0.0 0.0";
+    }
+
 }
