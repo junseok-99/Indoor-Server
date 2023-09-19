@@ -35,4 +35,17 @@ public class MainController {
         return "1.0 0.0 0.0 0.0 2.0 0.0 0.0 0.0 3.0 0.0 0.0 0.0 4.0 0.0 0.0 0.0";
     }
 
+    @GetMapping("/download")
+    public ResponseEntity<Resource> fileDownload() throws IOException {
+        Path filePath = Paths.get("/Users/jangjunseog/Downloads/n202_1.usdz");
+        InputStreamResource resource = new InputStreamResource(new FileInputStream(filePath.toString()));
+        String fileName = "n202_1.usdz";
+        log.info("Success download input excel file : " + filePath);
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .cacheControl(CacheControl.noCache())
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName)
+                .body(resource);
+    }
+
 }
