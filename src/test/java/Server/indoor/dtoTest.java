@@ -1,6 +1,5 @@
 package Server.indoor;
 
-import Server.indoor.dto.Space;
 import Server.indoor.dto.SpaceInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,9 +19,6 @@ public class dtoTest {
         list.add(new SpaceInfo("구역 1", -1.54f, 2.96f, -6.86f, -1.39f));
         list.add(new SpaceInfo("구역 2", -1.54f, 2.96f, -6.86f, -1.39f));
         list.add(new SpaceInfo("구역 3", -1.54f, 2.96f, -6.86f, -1.39f));
-
-        Space space = new Space();
-        space.setSpaceInfos(list);
 
         Map<String, Object> data = new HashMap<>();
         data.put("spaceInfo", list);
