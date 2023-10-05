@@ -54,6 +54,38 @@ public class IndoorRepository implements MyRepository{
         return null;
     }
 
+    @Override
+    public List<ARObjectInfo> findARObject(String spaceName) {
+        String sql = "select * from OBJECT_INFO where space_name = ?";
+
+        List<ARObjectInfo> list = new LinkedList<>();
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            con = dataSource.getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, spaceName);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                list.add(new ARObjectInfo(rs.getString("file_name"),rs.getString("direction"),
+                        rs.getFloat("x"), rs.getFloat("y"), rs.getFloat("z")));
+            }
+            if (list.isEmpty()) {
+                log.info("ARObject Empty!!");
+            } else {
+                return list;
+            }
+        } catch (SQLException e) {
+            log.info("AROBject Not Found!!");
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return null;
+    }
+
     public void close(Connection con, Statement stmt, ResultSet rs) {
         JdbcUtils.closeResultSet(rs);
         JdbcUtils.closeStatement(stmt);
