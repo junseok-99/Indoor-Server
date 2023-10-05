@@ -65,4 +65,23 @@ public class MainController {
         return null;
     }
 
+    @GetMapping("/arObject")
+    public String getARObject(@RequestParam String spaceName) {
+
+        List<ARObjectInfo> list = myRepository.findARObject(spaceName);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("arObjectInfo", list);
+
+        try {
+            String json;
+            json = new ObjectMapper().writeValueAsString(data);
+            return json;
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }
