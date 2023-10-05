@@ -8,4 +8,5 @@ import java.util.List;
 public interface MyRepository {
 
     List<SpaceInfo> findSpace(String spaceName);
+    List<ARObjectInfo> findARObject(String spaceName);
 }
