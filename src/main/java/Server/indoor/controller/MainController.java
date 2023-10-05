@@ -45,4 +45,24 @@ public class MainController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName)
                 .body(resource);
     }
+
+    @GetMapping("/space")
+    public String getSpace(@RequestParam String spaceName) {
+
+        List<SpaceInfo> list = myRepository.findSpace(spaceName);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("spaceInfo", list);
+
+        try {
+            String json;
+            json = new ObjectMapper().writeValueAsString(data);
+            return json;
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }
