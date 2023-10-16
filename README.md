@@ -2,3 +2,8 @@
 <h2>1. Play</h2>
 <p>Client Download Link : <a href="https://github.com/junseok-99/IndoorLocalization">https://github.com/junseok-99/IndoorLocalization</a></p>
 
+<br>
+<hr>
+<br>
+
+<h2>2. System Architecture</h2>
