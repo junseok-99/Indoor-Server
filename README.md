@@ -7,8 +7,8 @@
 <br>
 
 <h2>2. System Architecture</h2>
-<p>- Space Registeration</p>
+<p><b>- Space Registeration</b></p>
 <img width="100%" src="https://github.com/junseok-99/Indoor-Server/assets/81612834/869b6d22-2b55-416e-bb17-5e3828458f6e"/>
 <br>
-<p>- Space Information</p>
+<p><b>- Space Information</b></p>
 <img width="100%" src="https://github.com/junseok-99/Indoor-Server/assets/81612834/704b941d-31b3-4ad2-a79f-317135307df0"/>
