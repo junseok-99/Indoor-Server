@@ -36,8 +36,8 @@
 <br>
 
 <h2>2. System Architecture</h2>
-<p><b>- 공간 등록/b></p>
+<p><b>- 공간 등록</b></p>
 <img width="100%" src="https://github.com/junseok-99/Indoor-Server/assets/81612834/e768259f-6a8a-42fa-a570-6f40ededddb7"/>
 <br><br><br>
-<p><b>- 공간 안내/b></p>
+<p><b>- 공간 안내</b></p>
 <img width="100%" src="https://github.com/junseok-99/Indoor-Server/assets/81612834/8ffded86-4d92-4248-84c2-34389016710f"/>
